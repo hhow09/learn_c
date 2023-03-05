@@ -10,7 +10,7 @@ int main(int argc, char* argv[]) {
     if (pid == -1) {
         return 1;
     }
-    printf("Process id %d\n", getpid()); // 
+    printf("Process id %d\n", getpid()); // different btwn parrent and child
     if (pid == 0) { // child process only
         x++; // 
     }
@@ -24,3 +24,9 @@ int main(int argc, char* argv[]) {
     }
     return 0;
 }
+
+// [output]
+// Process id 56075
+// Process id 56076
+// Value of x: 2
+// Value of x: 3

@@ -10,12 +10,14 @@ void* routine() {
     x += 5; // global x
     sleep(2);
     printf("Value of x: %d\n", x); // 7
+    return 0;
 }
 
 void* routine2() {
     printf("routine2, Process id %d\n", getpid())
     sleep(2);
     printf("Value of x: %d\n", x); // global x, 7
+    return 0;
 }
 
 int main(int argc, char* argv[]) {
@@ -34,3 +36,9 @@ int main(int argc, char* argv[]) {
     }
     return 0;
 }
+
+// [output]
+// routine, Process id 55175
+// routine2, Process id 55175
+// Value of x: 7
+// Value of x: 7
